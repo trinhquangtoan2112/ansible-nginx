@@ -1,0 +1,16 @@
+server {
+    {% if ssl %}
+    listen 443 ssl;
+    ssl_certificate /etc/nginx/ssl/{{ server_name }}.crt;
+    ssl_certificate_key /etc/nginx/ssl/{{ server_name }}.key;
+    {% else %}
+    listen 80;
+    {% endif %}
+
+    server_name {{ server_name }};
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+}

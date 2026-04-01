@@ -1,0 +1,23 @@
+---
+- name: install nginx
+  ansible.builtin.apt:
+   name: nginx
+   state: present
+  notify: 
+    - restart nginx
+
+- name: copy nginx config file
+  ansible.builtin.template:
+    src: ../../../templates/nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify: 
+    - restart nginx
+
+- name: copy nginx html file
+  ansible.builtin.template:
+    src: ../../../templates/index.html.j2
+    dest: /usr/share/nginx/html/index.html
+  notify: 
+    - restart nginx
+
+    

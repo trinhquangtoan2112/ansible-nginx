@@ -1,0 +1,6 @@
+- name: Install and config Nginx in {{ env_name}} environment
+  host: all
+  remote_user: ubuntu
+  become: {{ become }}
+  roles:
+    - nginx

@@ -1,0 +1,2 @@
+env_name: staging
+server_name : staging.nginx.com

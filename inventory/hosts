@@ -1,0 +1,4 @@
+[staging]
+server1 192.168.164.130
+[prod]
+server1 192.168.164.130
